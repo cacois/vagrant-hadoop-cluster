@@ -3,6 +3,9 @@
 
 Vagrant::Config.run do |config|
   config.vm.box = "lucid64"
+
+  config.vm.share_folder "app", "/home/vagrant/app", "app"
+  
   config.vm.provision :puppet do |puppet|
      puppet.manifests_path = "manifests"
      puppet.manifest_file  = "base-hadoop.pp"
