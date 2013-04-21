@@ -2,7 +2,8 @@ include hadoop
 group { "puppet":
   ensure => "present",
 }
-  exec { 'apt-get update':
+
+exec { 'apt-get update':
     command => '/usr/bin/apt-get update',
 }
 
@@ -41,9 +42,6 @@ ssh_authorized_key { "ssh_key":
     require => File['/root/.ssh/id_rsa.pub']
 }
 
-exec { "update_hosts":
-    command => "echo -e "192.168.3.11\tbackup" >> /etc/hosts \ 
-                && echo -e "192.168.3.12\thadoop1" >> /etc/hosts \
-                && echo -e "192.168.3.13\thadoop2" >> /etc/hosts \
-                && echo -e "192.168.3.14\thadoop3" >> /etc/hosts",
+exec { 'update_hosts':
+    command => '/bin/echo -e \'192.168.3.11\tbackup\' >> /etc/hosts && /bin/echo -e \'192.168.3.12\thadoop1\' >> /etc/hosts && /bin/echo -e \'192.168.3.13\thadoop2\' >> /etc/hosts && /bin/echo -e \'192.168.3.14\thadoop3\' >> /etc/hosts',
 }
