@@ -78,7 +78,7 @@ $ cat input/file01
 $ cat input/file02
 ```
 
-COpy these files into HDFS with the following command:
+Copy these files into HDFS with the following command:
 
 ```
 $ sudo /opt/hadoop-1.0.4/bin/hadoop fs -copyFromLocal /home/vagrant/app/input/ /user/root/wordcount/input/
