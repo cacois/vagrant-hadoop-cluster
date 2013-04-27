@@ -16,6 +16,14 @@ file { "/root/.ssh":
     ensure => "directory",
 }
 
+file { "/var/hadoop":
+    ensure => "directory",
+}
+
+file { "/var/hadoop/pids":
+    ensure => "directory",
+}
+
 file {
   "/root/.ssh/id_rsa":
   source => "puppet:///modules/hadoop/id_rsa",
