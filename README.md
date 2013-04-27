@@ -74,16 +74,16 @@ $ cd ~/app
 Now it is time to put some data into your Hadoop cluster. Check out the two small files provided for an inital test:
 
 ```
-$ cat input/file01
-$ cat input/file02
+$ cat data/simple/file01
+$ cat data/simple/file02
 ```
 
 Copy these files into HDFS with the following command:
 
 ```
-$ sudo /opt/hadoop-1.0.4/bin/hadoop fs -copyFromLocal /home/vagrant/app/input/ /user/root/wordcount/input/
+$ sudo /opt/hadoop-1.0.4/bin/hadoop fs -copyFromLocal /home/vagrant/app/data/simple/ /user/root/wordcount/simple/
 ```
-This places the files within `/home/vagrant/app/input/` into HDFS at the HDFS path `/user/root/wordcount/input/`.
+This places the files within `/home/vagrant/app/data/simple/` into HDFS at the HDFS path `/user/root/wordcount/simple/`.
 
 Also provided is a small Java MapReduce program:
 
@@ -113,7 +113,7 @@ $ sudo ./run.sh
 This will run the following command:
 
 ```
-/opt/hadoop-1.0.4/bin/hadoop jar wordcount.jar org.myorg.WordCount /user/root/wordcount/input /user/root/wordcount/output
+/opt/hadoop-1.0.4/bin/hadoop jar wordcount.jar org.myorg.WordCount /user/root/wordcount/simple /user/root/wordcount/output/simple
 ```
 
 MapReduce will proceed to run the WordCount program against the files in `/user/root/wordcount/input`. You will see console output letting you know how things are going. Once the process is complete, run the following to view the results:
