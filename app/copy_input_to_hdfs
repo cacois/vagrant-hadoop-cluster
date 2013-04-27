@@ -1,1 +1,0 @@
-sudo /opt/hadoop-1.0.4/bin/hadoop fs -copyFromLocal /home/vagrant/app/input/ /user/root/wordcount/input/
