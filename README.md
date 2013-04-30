@@ -16,7 +16,7 @@ Install Vagrant and VirtualBox.
 Download the base box if necessary:
 
 ```
-$ vagrant box add lucid64 http://files.vagrantup.com/precise64.box
+$ vagrant box add precise64 http://files.vagrantup.com/precise64.box
 ```
 
 Next: 
